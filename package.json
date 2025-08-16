@@ -1,0 +1,28 @@
+{
+  "name": "prompt-challenge",
+  "version": "0.1.0",
+  "description": "CLI tool for practicing prompt engineering",
+  "main": "bin/cli.js",
+  "bin": {
+    "pe": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["prompt", "engineering", "cli", "ai", "challenge"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "inquirer": "^8.2.6",
+    "fs-extra": "^11.1.1",
+    "chalk": "^4.1.2",
+    "jimp": "^0.22.10",
+    "dotenv": "^16.3.1",
+    "@google/generative-ai": "^0.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
