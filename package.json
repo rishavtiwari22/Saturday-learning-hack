@@ -10,17 +10,24 @@
     "start": "node bin/cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["prompt", "engineering", "cli", "ai", "challenge"],
+  "keywords": [
+    "prompt",
+    "engineering",
+    "cli",
+    "ai",
+    "challenge"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "commander": "^11.0.0",
-    "inquirer": "^8.2.6",
-    "fs-extra": "^11.1.1",
+    "@google/generative-ai": "^0.21.0",
+    "@huggingface/inference": "^4.7.1",
     "chalk": "^4.1.2",
-    "jimp": "^0.22.10",
+    "commander": "^11.0.0",
     "dotenv": "^16.3.1",
-    "@google/generative-ai": "^0.21.0"
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.6",
+    "jimp": "^0.22.10"
   },
   "devDependencies": {
     "nodemon": "^3.0.0"

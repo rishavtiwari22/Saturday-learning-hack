@@ -97,11 +97,38 @@ program
     }
   });
 
+// Status check
+program
+  .command('status')
+  .description('Check API configuration status')
+  .action(() => {
+    console.log(chalk.bold.blue('\n🔧 API Configuration Status\n'));
+    
+    // Check Hugging Face
+    if (process.env.HUGGINGFACE_TOKEN) {
+      console.log(chalk.green('✅ Hugging Face API: Configured (Real AI image generation enabled)'));
+    } else {
+      console.log(chalk.yellow('⚠️  Hugging Face API: Not configured (Using placeholder images)'));
+      console.log(chalk.gray('   💡 Get free token at: https://huggingface.co/settings/tokens'));
+    }
+    
+    // Check Google API
+    if (process.env.GOOGLE_API_KEY) {
+      console.log(chalk.green('✅ Google Gemini API: Configured (AI-powered similarity scoring)'));
+    } else {
+      console.log(chalk.yellow('⚠️  Google Gemini API: Not configured (Using random scoring)'));
+      console.log(chalk.gray('   💡 Get free API key at: https://aistudio.google.com/app/apikey'));
+    }
+    
+    console.log(chalk.dim('\n📝 Create a .env file with your API keys to enable full functionality'));
+  });
+
 // Show help if no command
 if (!process.argv.slice(2).length) {
   console.log(chalk.bold.blue('\\n🎯 Prompt Engineering Challenge\\n'));
   console.log(chalk.yellow('Quick start:'));
   console.log('  pe init    - Setup challenges');
+  console.log('  pe status  - Check API configuration');  
   console.log('  pe list    - View challenges');
   console.log('  pe start 1 - Begin first challenge\\n');
   program.outputHelp();
