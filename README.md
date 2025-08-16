@@ -5,15 +5,20 @@ A simple CLI tool to practice prompt engineering skills through interactive chal
 ## ✨ Features
 
 - 🎯 **Progressive Challenges** - Unlock new challenges as you improve
-- 📊 **Smart Scoring** - AI-powered similarity comparison
-- 🎨 **Image Generation** - Create images from your prompts
+- 🤖 **Real AI Image Generation** - Powered by Hugging Face Stable Diffusion
+- 📊 **Smart Scoring** - AI-powered similarity comparison with Google Gemini
+- 🔄 **Fallback Mode** - Works without API keys using placeholder images
 - 📈 **Progress Tracking** - Save your journey locally
+- 🎨 **Multiple Difficulty Levels** - From beginner to advanced prompts
 
 ## 🚀 Quick Start
 
 ```bash
 # Install dependencies
 npm install
+
+# Check API configuration status
+npm run start status
 
 # Initialize challenges
 npm run start init
@@ -25,11 +30,24 @@ npm run start list
 npm run start start 1
 ```
 
+### 🔑 API Configuration (Optional but Recommended)
+
+For the best experience, configure API keys in a `.env` file:
+
+1. **Copy the example file**: `cp .env.example .env`
+2. **Get a Hugging Face token** (free): [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+3. **Get a Google AI Studio key** (free): [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+4. **Add them to your `.env` file**
+
+**Without API keys**: The tool works in "demo mode" with placeholder images and random scoring.
+**With API keys**: Get real AI-generated images and accurate similarity scoring!
+
 ## 📋 Commands
 
 | Command | Description |
 |---------|-------------|
 | `pe init` | Setup challenges and reference images |
+| `pe status` | Check API configuration status |
 | `pe list` | Show all challenges and their status |
 | `pe start <id>` | Begin a specific challenge |
 | `pe retry <id>` | Retry a challenge |
@@ -88,10 +106,13 @@ prompt-cli/
 
 ## 🔮 Future Enhancements
 
-- **Real AI Integration**: Connect to Hugging Face, Replicate, or local models
-- **CLIP Scoring**: Implement proper image similarity using CLIP embeddings
-- **Custom Challenges**: Let users create their own challenges
+- **Multiple AI Providers**: Add support for OpenAI DALL-E, Replicate, Midjourney API
+- **Local Models**: Support for running Stable Diffusion locally
+- **CLIP Scoring**: Implement advanced image similarity using CLIP embeddings
+- **Custom Challenges**: Let users create and share their own challenges
 - **Web Dashboard**: MERN stack interface for better UX
+- **Leaderboards**: Community scoring and sharing
+- **Batch Generation**: Generate multiple variations of the same prompt
 
 ## 🤝 Contributing
 
